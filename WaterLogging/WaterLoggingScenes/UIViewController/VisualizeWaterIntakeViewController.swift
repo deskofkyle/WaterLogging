@@ -6,7 +6,7 @@
 
 import UIKit
 
-class VisualizeWaterIntakeViewController: UIViewController {
+public final class VisualizeWaterIntakeViewController: UIViewController {
 
     private let trackingLabel = UILabel()
     
@@ -19,7 +19,7 @@ class VisualizeWaterIntakeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }

@@ -5,14 +5,19 @@
 //
 
 import UIKit
+import WaterLoggingDatabase
+import WaterLoggingModels
 
-class TrackWaterViewController: UIViewController {
+public final class TrackWaterViewController: UIViewController {
     
     private let addWaterButton = UIButton()
     private let updateGoalButton = UIButton()
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    private let waterLoggingStorage: WaterLoggingStoring
+    
+    init(waterLoggingStorage: WaterLoggingStoring) {
+        self.waterLoggingStorage = waterLoggingStorage
+        super.init(nibName: nil, bundle: nil)
         setUp()
     }
     
@@ -75,13 +80,15 @@ class TrackWaterViewController: UIViewController {
     // Actions
     
     @objc private func addWaterButtonPressed() {
-        print("Add water button pressed")
+        let record = WLRecord(amount: 8,
+                              createdAt: Date(),
+                              lastUpdated: Date(),
+                              unit: .ounce)
+        waterLoggingStorage.save(record: record)
     }
     
     @objc private func goalButtonPressed() {
         print("Goal button pressed")
     }
-    
-
 }
 
