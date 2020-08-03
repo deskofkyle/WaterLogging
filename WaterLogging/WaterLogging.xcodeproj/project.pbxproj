@@ -7,65 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E374CC324D39D0C003A8A8F /* WaterLoggingDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E374CB324D39D0C003A8A8F /* WaterLoggingDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E374CC624D39D0C003A8A8F /* WaterLoggingDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E374CB124D39D0C003A8A8F /* WaterLoggingDatabase.framework */; };
-		6E374CC724D39D0C003A8A8F /* WaterLoggingDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E374CB124D39D0C003A8A8F /* WaterLoggingDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E374CD124D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E374CCF24D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodeld */; };
-		6E374CE924D39DD1003A8A8F /* WaterLoggingModels.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E374CD924D39DD1003A8A8F /* WaterLoggingModels.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E374CEC24D39DD1003A8A8F /* WaterLoggingModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E374CD724D39DD1003A8A8F /* WaterLoggingModels.framework */; };
-		6E374CED24D39DD1003A8A8F /* WaterLoggingModels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E374CD724D39DD1003A8A8F /* WaterLoggingModels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E374CF524D39DF6003A8A8F /* WLUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374CF424D39DF6003A8A8F /* WLUnit.swift */; };
-		6E374CF724D39F44003A8A8F /* WLRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374CF624D39F44003A8A8F /* WLRecord.swift */; };
-		6E374D0F24D39FEB003A8A8F /* WaterLoggingScenes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E374CFF24D39FEB003A8A8F /* WaterLoggingScenes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E374D1224D39FEB003A8A8F /* WaterLoggingScenes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E374CFD24D39FEB003A8A8F /* WaterLoggingScenes.framework */; };
-		6E374D1324D39FEB003A8A8F /* WaterLoggingScenes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E374CFD24D39FEB003A8A8F /* WaterLoggingScenes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E374D1A24D39FF5003A8A8F /* TrackWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1EC24734EC7007708F4 /* TrackWaterViewController.swift */; };
-		6E374D1B24D39FF5003A8A8F /* VisualizeWaterIntakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1EE24734EE8007708F4 /* VisualizeWaterIntakeViewController.swift */; };
-		6E374D1D24D3A047003A8A8F /* WaterLoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D1C24D3A047003A8A8F /* WaterLoggingStorage.swift */; };
-		6E374D1F24D3A07F003A8A8F /* CoreDataInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */; };
-		6E374D2024D3A0B2003A8A8F /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1F024734F10007708F4 /* AppTabBarController.swift */; };
-		6E374D2424D3A0F8003A8A8F /* WaterLoggingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D2324D3A0F8003A8A8F /* WaterLoggingFactory.swift */; };
-		6E374D2724D3A18C003A8A8F /* TabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D2624D3A18C003A8A8F /* TabBarControllerFactory.swift */; };
-		6E374D2924D3A2A3003A8A8F /* WaterLoggingScenesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D2824D3A2A3003A8A8F /* WaterLoggingScenesFactory.swift */; };
-		6EDDA05624D3A52A004C0F44 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDDA05524D3A52A004C0F44 /* ViewControllerFactory.swift */; };
-		6EDDA05824D3A5DD004C0F44 /* WaterLoggingModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E374CD724D39DD1003A8A8F /* WaterLoggingModels.framework */; };
-		6EDDA05E24D3A628004C0F44 /* WaterLoggingDatabaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDDA05D24D3A628004C0F44 /* WaterLoggingDatabaseFactory.swift */; };
+		6E1EE24324D792F700E9F336 /* WaterGoalsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */; };
+		6E1EE24524D794BE00E9F336 /* WaterLogProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */; };
+		6E374D2424D3A0F8003A8A8F /* MainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D2324D3A0F8003A8A8F /* MainDependencyContainer.swift */; };
+		6E9E24FC24D3DD7E00B349DE /* WaterLogRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374CF624D39F44003A8A8F /* WaterLogRecord.swift */; };
+		6E9E24FE24D3DD8600B349DE /* WaterLoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D1C24D3A047003A8A8F /* WaterLoggingStorage.swift */; };
+		6E9E24FF24D3DD8600B349DE /* CoreDataInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */; };
+		6E9E250024D3DD8E00B349DE /* VisualizeWaterIntakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1EE24734EE8007708F4 /* VisualizeWaterIntakeViewController.swift */; };
+		6E9E250424D3DD8E00B349DE /* TrackWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1EC24734EC7007708F4 /* TrackWaterViewController.swift */; };
+		6E9E250524D3DD8E00B349DE /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1F024734F10007708F4 /* AppTabBarController.swift */; };
+		6E9E250C24D3E81400B349DE /* WaterLoggingDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E374CCF24D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodeld */; };
+		6E9E250F24D7735300B349DE /* SolidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E250E24D7735300B349DE /* SolidButton.swift */; };
+		6E9E251424D77DD700B349DE /* WaterLoggingStoringError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E251324D77DD700B349DE /* WaterLoggingStoringError.swift */; };
+		6E9E251724D781C200B349DE /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E251624D781C200B349DE /* CircularProgressView.swift */; };
+		6E9E251924D78BAC00B349DE /* WaterLogGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E251824D78BAC00B349DE /* WaterLogGoal.swift */; };
+		6EF9FB8B24D78FCB000BA7B4 /* UIFont+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9FB8A24D78FCB000BA7B4 /* UIFont+Rounded.swift */; };
 		B31AA1C824734EAB007708F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1C724734EAB007708F4 /* AppDelegate.swift */; };
 		B31AA1CA24734EAB007708F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1C924734EAB007708F4 /* SceneDelegate.swift */; };
 		B31AA1D424734EAB007708F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B31AA1D324734EAB007708F4 /* Assets.xcassets */; };
 		B31AA1D724734EAB007708F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31AA1D524734EAB007708F4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6E374CC424D39D0C003A8A8F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B31AA1BC24734EAA007708F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E374CB024D39D0C003A8A8F;
-			remoteInfo = WaterLoggingDatabase;
-		};
-		6E374CEA24D39DD1003A8A8F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B31AA1BC24734EAA007708F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E374CD624D39DD1003A8A8F;
-			remoteInfo = WaterLoggingModels;
-		};
-		6E374D1024D39FEB003A8A8F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B31AA1BC24734EAA007708F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E374CFC24D39FEB003A8A8F;
-			remoteInfo = WaterLoggingScenes;
-		};
-		6EDDA05A24D3A5DD004C0F44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B31AA1BC24734EAA007708F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E374CD624D39DD1003A8A8F;
-			remoteInfo = WaterLoggingModels;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		6E374CC824D39D0C003A8A8F /* Embed Frameworks */ = {
@@ -74,9 +35,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6E374D1324D39FEB003A8A8F /* WaterLoggingScenes.framework in Embed Frameworks */,
-				6E374CED24D39DD1003A8A8F /* WaterLoggingModels.framework in Embed Frameworks */,
-				6E374CC724D39D0C003A8A8F /* WaterLoggingDatabase.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,25 +42,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6E374CB124D39D0C003A8A8F /* WaterLoggingDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WaterLoggingDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E374CB324D39D0C003A8A8F /* WaterLoggingDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterLoggingDatabase.h; sourceTree = "<group>"; };
-		6E374CB424D39D0C003A8A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalsStorage.swift; sourceTree = "<group>"; };
+		6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogProgress.swift; sourceTree = "<group>"; };
 		6E374CD024D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WaterLoggingDataModel.xcdatamodel; sourceTree = "<group>"; };
-		6E374CD724D39DD1003A8A8F /* WaterLoggingModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WaterLoggingModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E374CD924D39DD1003A8A8F /* WaterLoggingModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterLoggingModels.h; sourceTree = "<group>"; };
-		6E374CDA24D39DD1003A8A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E374CF424D39DF6003A8A8F /* WLUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLUnit.swift; sourceTree = "<group>"; };
-		6E374CF624D39F44003A8A8F /* WLRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLRecord.swift; sourceTree = "<group>"; };
-		6E374CFD24D39FEB003A8A8F /* WaterLoggingScenes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WaterLoggingScenes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E374CFF24D39FEB003A8A8F /* WaterLoggingScenes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterLoggingScenes.h; sourceTree = "<group>"; };
-		6E374D0024D39FEB003A8A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E374CF624D39F44003A8A8F /* WaterLogRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogRecord.swift; sourceTree = "<group>"; };
 		6E374D1C24D3A047003A8A8F /* WaterLoggingStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLoggingStorage.swift; sourceTree = "<group>"; };
-		6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataInterface.swift; path = "New Group/CoreDataInterface.swift"; sourceTree = "<group>"; };
-		6E374D2324D3A0F8003A8A8F /* WaterLoggingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLoggingFactory.swift; sourceTree = "<group>"; };
-		6E374D2624D3A18C003A8A8F /* TabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerFactory.swift; sourceTree = "<group>"; };
-		6E374D2824D3A2A3003A8A8F /* WaterLoggingScenesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLoggingScenesFactory.swift; sourceTree = "<group>"; };
-		6EDDA05524D3A52A004C0F44 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		6EDDA05D24D3A628004C0F44 /* WaterLoggingDatabaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLoggingDatabaseFactory.swift; sourceTree = "<group>"; };
+		6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInterface.swift; sourceTree = "<group>"; };
+		6E374D2324D3A0F8003A8A8F /* MainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDependencyContainer.swift; sourceTree = "<group>"; };
+		6E9E250E24D7735300B349DE /* SolidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButton.swift; sourceTree = "<group>"; };
+		6E9E251324D77DD700B349DE /* WaterLoggingStoringError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLoggingStoringError.swift; sourceTree = "<group>"; };
+		6E9E251624D781C200B349DE /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		6E9E251824D78BAC00B349DE /* WaterLogGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogGoal.swift; sourceTree = "<group>"; };
+		6EF9FB8A24D78FCB000BA7B4 /* UIFont+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Rounded.swift"; sourceTree = "<group>"; };
 		B31AA1C424734EAB007708F4 /* WaterLogging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterLogging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31AA1C724734EAB007708F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B31AA1C924734EAB007708F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,78 +66,48 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6E374CAE24D39D0C003A8A8F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6EDDA05824D3A5DD004C0F44 /* WaterLoggingModels.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E374CD424D39DD1003A8A8F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E374CFA24D39FEB003A8A8F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B31AA1C124734EAB007708F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E374D1224D39FEB003A8A8F /* WaterLoggingScenes.framework in Frameworks */,
-				6E374CEC24D39DD1003A8A8F /* WaterLoggingModels.framework in Frameworks */,
-				6E374CC624D39D0C003A8A8F /* WaterLoggingDatabase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E374CB224D39D0C003A8A8F /* WaterLoggingDatabase */ = {
+		6E9E250624D3DDB700B349DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6E374CB324D39D0C003A8A8F /* WaterLoggingDatabase.h */,
-				6EDDA05F24D3A680004C0F44 /* Factories */,
+				6E374CF624D39F44003A8A8F /* WaterLogRecord.swift */,
+				6E9E251824D78BAC00B349DE /* WaterLogGoal.swift */,
+				6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6E9E250724D3DDC300B349DE /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6E374CCF24D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodeld */,
+				6E9E251324D77DD700B349DE /* WaterLoggingStoringError.swift */,
+				6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */,
 				6E374D1C24D3A047003A8A8F /* WaterLoggingStorage.swift */,
 				6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */,
-				6E374CCF24D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodeld */,
-				6E374CB424D39D0C003A8A8F /* Info.plist */,
 			);
-			path = WaterLoggingDatabase;
+			path = Database;
 			sourceTree = "<group>";
 		};
-		6E374CD824D39DD1003A8A8F /* WaterLoggingModels */ = {
+		6E9E250824D3DDFC00B349DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6E374CD924D39DD1003A8A8F /* WaterLoggingModels.h */,
-				6E374CF424D39DF6003A8A8F /* WLUnit.swift */,
-				6E374CF624D39F44003A8A8F /* WLRecord.swift */,
-				6E374CDA24D39DD1003A8A8F /* Info.plist */,
+				6E9E250924D3DE0100B349DE /* UITabBarController */,
+				6E9E250A24D3DE0800B349DE /* UIViewController */,
 			);
-			path = WaterLoggingModels;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		6E374CFE24D39FEB003A8A8F /* WaterLoggingScenes */ = {
-			isa = PBXGroup;
-			children = (
-				6E374D2524D3A17D003A8A8F /* Factories */,
-				6E374D2124D3A0B5003A8A8F /* UITabBarController */,
-				6E374D2224D3A0BD003A8A8F /* UIViewController */,
-				6E374CFF24D39FEB003A8A8F /* WaterLoggingScenes.h */,
-				6E374D0024D39FEB003A8A8F /* Info.plist */,
-			);
-			path = WaterLoggingScenes;
-			sourceTree = "<group>";
-		};
-		6E374D2124D3A0B5003A8A8F /* UITabBarController */ = {
+		6E9E250924D3DE0100B349DE /* UITabBarController */ = {
 			isa = PBXGroup;
 			children = (
 				B31AA1F024734F10007708F4 /* AppTabBarController.swift */,
@@ -194,7 +115,7 @@
 			path = UITabBarController;
 			sourceTree = "<group>";
 		};
-		6E374D2224D3A0BD003A8A8F /* UIViewController */ = {
+		6E9E250A24D3DE0800B349DE /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B31AA1EC24734EC7007708F4 /* TrackWaterViewController.swift */,
@@ -203,14 +124,37 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
-		6E374D2524D3A17D003A8A8F /* Factories */ = {
+		6E9E250B24D3DF2800B349DE /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
-				6E374D2824D3A2A3003A8A8F /* WaterLoggingScenesFactory.swift */,
-				6E374D2624D3A18C003A8A8F /* TabBarControllerFactory.swift */,
-				6EDDA05524D3A52A004C0F44 /* ViewControllerFactory.swift */,
+				6E374D2324D3A0F8003A8A8F /* MainDependencyContainer.swift */,
 			);
-			path = Factories;
+			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
+		6E9E250D24D772AD00B349DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E9E251524D781A200B349DE /* UIProgressView */,
+				6E9E251024D7758900B349DE /* UIButton */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6E9E251024D7758900B349DE /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				6E9E250E24D7735300B349DE /* SolidButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		6E9E251524D781A200B349DE /* UIProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				6E9E251624D781C200B349DE /* CircularProgressView.swift */,
+			);
+			path = UIProgressView;
 			sourceTree = "<group>";
 		};
 		6EDDA05724D3A5DD004C0F44 /* Frameworks */ = {
@@ -220,21 +164,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6EDDA05F24D3A680004C0F44 /* Factories */ = {
+		6EF9FB8924D78FB7000BA7B4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6EDDA05D24D3A628004C0F44 /* WaterLoggingDatabaseFactory.swift */,
+				6EF9FB8C24D78FD6000BA7B4 /* UIFont */,
 			);
-			path = Factories;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6EF9FB8C24D78FD6000BA7B4 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				6EF9FB8A24D78FCB000BA7B4 /* UIFont+Rounded.swift */,
+			);
+			path = UIFont;
 			sourceTree = "<group>";
 		};
 		B31AA1BB24734EAA007708F4 = {
 			isa = PBXGroup;
 			children = (
 				B31AA1C624734EAB007708F4 /* WaterLogging */,
-				6E374CFE24D39FEB003A8A8F /* WaterLoggingScenes */,
-				6E374CB224D39D0C003A8A8F /* WaterLoggingDatabase */,
-				6E374CD824D39DD1003A8A8F /* WaterLoggingModels */,
 				B31AA1C524734EAB007708F4 /* Products */,
 				6EDDA05724D3A5DD004C0F44 /* Frameworks */,
 			);
@@ -244,9 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				B31AA1C424734EAB007708F4 /* WaterLogging.app */,
-				6E374CB124D39D0C003A8A8F /* WaterLoggingDatabase.framework */,
-				6E374CD724D39DD1003A8A8F /* WaterLoggingModels.framework */,
-				6E374CFD24D39FEB003A8A8F /* WaterLoggingScenes.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,7 +202,12 @@
 			children = (
 				B31AA1C724734EAB007708F4 /* AppDelegate.swift */,
 				B31AA1C924734EAB007708F4 /* SceneDelegate.swift */,
-				6E374D2324D3A0F8003A8A8F /* WaterLoggingFactory.swift */,
+				6E9E250B24D3DF2800B349DE /* Dependency Injection */,
+				6E9E250624D3DDB700B349DE /* Models */,
+				6E9E250724D3DDC300B349DE /* Database */,
+				6E9E250D24D772AD00B349DE /* Views */,
+				6EF9FB8924D78FB7000BA7B4 /* Extensions */,
+				6E9E250824D3DDFC00B349DE /* Controllers */,
 				B31AA1D324734EAB007708F4 /* Assets.xcassets */,
 				B31AA1D524734EAB007708F4 /* LaunchScreen.storyboard */,
 				B31AA1D824734EAB007708F4 /* Info.plist */,
@@ -266,89 +217,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		6E374CAC24D39D0C003A8A8F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E374CC324D39D0C003A8A8F /* WaterLoggingDatabase.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E374CD224D39DD1003A8A8F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E374CE924D39DD1003A8A8F /* WaterLoggingModels.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E374CF824D39FEB003A8A8F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E374D0F24D39FEB003A8A8F /* WaterLoggingScenes.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		6E374CB024D39D0C003A8A8F /* WaterLoggingDatabase */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6E374CCD24D39D0C003A8A8F /* Build configuration list for PBXNativeTarget "WaterLoggingDatabase" */;
-			buildPhases = (
-				6E374CAC24D39D0C003A8A8F /* Headers */,
-				6E374CAD24D39D0C003A8A8F /* Sources */,
-				6E374CAE24D39D0C003A8A8F /* Frameworks */,
-				6E374CAF24D39D0C003A8A8F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6EDDA05B24D3A5DD004C0F44 /* PBXTargetDependency */,
-			);
-			name = WaterLoggingDatabase;
-			productName = WaterLoggingDatabase;
-			productReference = 6E374CB124D39D0C003A8A8F /* WaterLoggingDatabase.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		6E374CD624D39DD1003A8A8F /* WaterLoggingModels */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6E374CEE24D39DD1003A8A8F /* Build configuration list for PBXNativeTarget "WaterLoggingModels" */;
-			buildPhases = (
-				6E374CD224D39DD1003A8A8F /* Headers */,
-				6E374CD324D39DD1003A8A8F /* Sources */,
-				6E374CD424D39DD1003A8A8F /* Frameworks */,
-				6E374CD524D39DD1003A8A8F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WaterLoggingModels;
-			productName = WaterLoggingModels;
-			productReference = 6E374CD724D39DD1003A8A8F /* WaterLoggingModels.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		6E374CFC24D39FEB003A8A8F /* WaterLoggingScenes */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6E374D1424D39FEB003A8A8F /* Build configuration list for PBXNativeTarget "WaterLoggingScenes" */;
-			buildPhases = (
-				6E374CF824D39FEB003A8A8F /* Headers */,
-				6E374CF924D39FEB003A8A8F /* Sources */,
-				6E374CFA24D39FEB003A8A8F /* Frameworks */,
-				6E374CFB24D39FEB003A8A8F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WaterLoggingScenes;
-			productName = WaterLoggingScenes;
-			productReference = 6E374CFD24D39FEB003A8A8F /* WaterLoggingScenes.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		B31AA1C324734EAB007708F4 /* WaterLogging */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B31AA1E624734EAC007708F4 /* Build configuration list for PBXNativeTarget "WaterLogging" */;
@@ -361,9 +230,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6E374CC524D39D0C003A8A8F /* PBXTargetDependency */,
-				6E374CEB24D39DD1003A8A8F /* PBXTargetDependency */,
-				6E374D1124D39FEB003A8A8F /* PBXTargetDependency */,
 			);
 			name = WaterLogging;
 			productName = WaterLogging;
@@ -380,17 +246,6 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
-					6E374CB024D39D0C003A8A8F = {
-						CreatedOnToolsVersion = 11.6;
-						LastSwiftMigration = 1160;
-					};
-					6E374CD624D39DD1003A8A8F = {
-						CreatedOnToolsVersion = 11.6;
-						LastSwiftMigration = 1160;
-					};
-					6E374CFC24D39FEB003A8A8F = {
-						CreatedOnToolsVersion = 11.6;
-					};
 					B31AA1C324734EAB007708F4 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -410,35 +265,11 @@
 			projectRoot = "";
 			targets = (
 				B31AA1C324734EAB007708F4 /* WaterLogging */,
-				6E374CB024D39D0C003A8A8F /* WaterLoggingDatabase */,
-				6E374CD624D39DD1003A8A8F /* WaterLoggingModels */,
-				6E374CFC24D39FEB003A8A8F /* WaterLoggingScenes */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6E374CAF24D39D0C003A8A8F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E374CD524D39DD1003A8A8F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E374CFB24D39FEB003A8A8F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B31AA1C224734EAB007708F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,73 +282,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6E374CAD24D39D0C003A8A8F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E374D1D24D3A047003A8A8F /* WaterLoggingStorage.swift in Sources */,
-				6E374D1F24D3A07F003A8A8F /* CoreDataInterface.swift in Sources */,
-				6EDDA05E24D3A628004C0F44 /* WaterLoggingDatabaseFactory.swift in Sources */,
-				6E374CD124D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E374CD324D39DD1003A8A8F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E374CF524D39DF6003A8A8F /* WLUnit.swift in Sources */,
-				6E374CF724D39F44003A8A8F /* WLRecord.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E374CF924D39FEB003A8A8F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E374D2924D3A2A3003A8A8F /* WaterLoggingScenesFactory.swift in Sources */,
-				6E374D2724D3A18C003A8A8F /* TabBarControllerFactory.swift in Sources */,
-				6E374D2024D3A0B2003A8A8F /* AppTabBarController.swift in Sources */,
-				6EDDA05624D3A52A004C0F44 /* ViewControllerFactory.swift in Sources */,
-				6E374D1A24D39FF5003A8A8F /* TrackWaterViewController.swift in Sources */,
-				6E374D1B24D39FF5003A8A8F /* VisualizeWaterIntakeViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B31AA1C024734EAB007708F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E1EE24324D792F700E9F336 /* WaterGoalsStorage.swift in Sources */,
+				6E9E250C24D3E81400B349DE /* WaterLoggingDataModel.xcdatamodeld in Sources */,
+				6E9E24FC24D3DD7E00B349DE /* WaterLogRecord.swift in Sources */,
 				B31AA1C824734EAB007708F4 /* AppDelegate.swift in Sources */,
-				6E374D2424D3A0F8003A8A8F /* WaterLoggingFactory.swift in Sources */,
+				6E1EE24524D794BE00E9F336 /* WaterLogProgress.swift in Sources */,
+				6E374D2424D3A0F8003A8A8F /* MainDependencyContainer.swift in Sources */,
+				6E9E250024D3DD8E00B349DE /* VisualizeWaterIntakeViewController.swift in Sources */,
+				6E9E250424D3DD8E00B349DE /* TrackWaterViewController.swift in Sources */,
+				6E9E250524D3DD8E00B349DE /* AppTabBarController.swift in Sources */,
+				6E9E24FE24D3DD8600B349DE /* WaterLoggingStorage.swift in Sources */,
+				6E9E24FF24D3DD8600B349DE /* CoreDataInterface.swift in Sources */,
+				6E9E251924D78BAC00B349DE /* WaterLogGoal.swift in Sources */,
+				6EF9FB8B24D78FCB000BA7B4 /* UIFont+Rounded.swift in Sources */,
 				B31AA1CA24734EAB007708F4 /* SceneDelegate.swift in Sources */,
+				6E9E250F24D7735300B349DE /* SolidButton.swift in Sources */,
+				6E9E251724D781C200B349DE /* CircularProgressView.swift in Sources */,
+				6E9E251424D77DD700B349DE /* WaterLoggingStoringError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6E374CC524D39D0C003A8A8F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E374CB024D39D0C003A8A8F /* WaterLoggingDatabase */;
-			targetProxy = 6E374CC424D39D0C003A8A8F /* PBXContainerItemProxy */;
-		};
-		6E374CEB24D39DD1003A8A8F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E374CD624D39DD1003A8A8F /* WaterLoggingModels */;
-			targetProxy = 6E374CEA24D39DD1003A8A8F /* PBXContainerItemProxy */;
-		};
-		6E374D1124D39FEB003A8A8F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E374CFC24D39FEB003A8A8F /* WaterLoggingScenes */;
-			targetProxy = 6E374D1024D39FEB003A8A8F /* PBXContainerItemProxy */;
-		};
-		6EDDA05B24D3A5DD004C0F44 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E374CD624D39DD1003A8A8F /* WaterLoggingModels */;
-			targetProxy = 6EDDA05A24D3A5DD004C0F44 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B31AA1D524734EAB007708F4 /* LaunchScreen.storyboard */ = {
@@ -531,174 +320,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6E374CC924D39D0C003A8A8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WaterLoggingDatabase/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleRyan.WaterLoggingDatabase;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6E374CCA24D39D0C003A8A8F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WaterLoggingDatabase/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleRyan.WaterLoggingDatabase;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6E374CEF24D39DD1003A8A8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WaterLoggingModels/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleRyan.WaterLoggingModels;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6E374CF024D39DD1003A8A8F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WaterLoggingModels/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleRyan.WaterLoggingModels;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6E374D1524D39FEB003A8A8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WaterLoggingScenes/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleRyan.WaterLoggingScenes;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6E374D1624D39FEB003A8A8F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WaterLoggingScenes/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleRyan.WaterLoggingScenes;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		B31AA1E424734EAC007708F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -816,7 +437,6 @@
 		B31AA1E724734EAC007708F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WaterLogging/Info.plist;
@@ -834,7 +454,6 @@
 		B31AA1E824734EAC007708F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WaterLogging/Info.plist;
@@ -852,33 +471,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E374CCD24D39D0C003A8A8F /* Build configuration list for PBXNativeTarget "WaterLoggingDatabase" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E374CC924D39D0C003A8A8F /* Debug */,
-				6E374CCA24D39D0C003A8A8F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6E374CEE24D39DD1003A8A8F /* Build configuration list for PBXNativeTarget "WaterLoggingModels" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E374CEF24D39DD1003A8A8F /* Debug */,
-				6E374CF024D39DD1003A8A8F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6E374D1424D39FEB003A8A8F /* Build configuration list for PBXNativeTarget "WaterLoggingScenes" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E374D1524D39FEB003A8A8F /* Debug */,
-				6E374D1624D39FEB003A8A8F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B31AA1BF24734EAA007708F4 /* Build configuration list for PBXProject "WaterLogging" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

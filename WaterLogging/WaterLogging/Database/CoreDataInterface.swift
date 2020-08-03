@@ -1,6 +1,6 @@
 //
 //  CoreDataInterface.swift
-//  WaterLoggingDatabase
+//  WaterLogging
 //
 //  Created by Kyle Ryan on 7/30/20.
 //  Copyright © 2020 Apple. All rights reserved.
@@ -8,10 +8,10 @@
 
 import CoreData
 import Foundation
-import WaterLoggingModels
 
 protocol CoreDataInterfacing {
-    func save(record: WLRecord)
+    var todaysWaterIntake: Result<Double, Error> { get }
+    func save(record: WaterLogRecord) -> Result<Bool, Error>
 }
 
 protocol CoreDataInterfaceFactory {
@@ -55,7 +55,11 @@ final class CoreDataInterface: NSPersistentContainer {
 }
 
 extension CoreDataInterface: CoreDataInterfacing {
-    func save(record: WLRecord) {
+    var todaysWaterIntake: Result<Double, Error> {
+        return .success(300)
+    }
+
+    func save(record: WaterLogRecord) -> Result<Bool, Error> {
         let managedContext = viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: "WaterLoggingRecord",
@@ -66,13 +70,12 @@ extension CoreDataInterface: CoreDataInterfacing {
         object.setValue(record.amount, forKeyPath: "amount")
         object.setValue(record.createdAt, forKeyPath: "createdAt")
         object.setValue(record.lastUpdated, forKeyPath: "lastUpdated")
-        object.setValue(record.unit.rawValue, forKeyPath: "unit")
 
         do {
             try managedContext.save()
-            print("Record saved to Core Data!")
+            return .success(true)
         } catch let error as NSError {
-            print("Unable to save to Core Data \(error)")
+            return .failure(error)
         }
     }
 }

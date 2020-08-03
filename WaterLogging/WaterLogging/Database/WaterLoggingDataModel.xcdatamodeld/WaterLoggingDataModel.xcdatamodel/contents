@@ -4,9 +4,8 @@
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="unit" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="WaterLoggingRecord" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="WaterLoggingRecord" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>

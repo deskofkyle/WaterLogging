@@ -16,7 +16,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = WaterLoggingFactory.shared.makeAppTabBarController()
+        window.rootViewController = MainDependencyContainer.shared.makeAppTabBarController()
         window.makeKeyAndVisible()
         self.window = window
     }

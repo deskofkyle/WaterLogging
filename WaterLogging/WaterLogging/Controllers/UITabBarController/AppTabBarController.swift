@@ -6,12 +6,19 @@
 
 import UIKit
 
+protocol TabBarControllerFactory {
+    func makeAppTabBarController() -> UITabBarController
+}
+
 final class AppTabBarController: UITabBarController {
     
     private let trackWaterViewController: TrackWaterViewController
-    
-    init(trackWaterViewController: TrackWaterViewController) {
+    private let visualizeWaterIntakeViewController: VisualizeWaterIntakeViewController
+
+    init(trackWaterViewController: TrackWaterViewController,
+         visualizeWaterIntakeViewController: VisualizeWaterIntakeViewController) {
         self.trackWaterViewController = trackWaterViewController
+        self.visualizeWaterIntakeViewController = visualizeWaterIntakeViewController
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,13 +33,10 @@ final class AppTabBarController: UITabBarController {
         let vizImage = UIImage(systemName: "chart.bar")
         
         trackWaterViewController.tabBarItem = UITabBarItem(title: "Track", image: addImage, tag: 0)
-
-        let visualizeWaterIntakeViewController = VisualizeWaterIntakeViewController()
         visualizeWaterIntakeViewController.tabBarItem = UITabBarItem(title: "Visualize", image: vizImage, tag: 1)
 
-        let tabBarList = [trackWaterViewController, visualizeWaterIntakeViewController]
+        let tabBarList = [trackWaterViewController, visualizeWaterIntakeViewController].map { UINavigationController(rootViewController: $0) }
 
         viewControllers = tabBarList
     }
-
 }
