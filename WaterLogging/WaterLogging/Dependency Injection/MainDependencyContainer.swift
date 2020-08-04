@@ -6,6 +6,7 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
+import HealthKit
 import UIKit
 
 final class MainDependencyContainer {
@@ -56,5 +57,14 @@ extension MainDependencyContainer: WaterGoalsStorageFactory {
     func makeWaterGoalsStorage() -> WaterGoalsStoring {
         let defaults = UserDefaults.standard
         return WaterGoalsStorage(defaults: defaults)
+    }
+}
+
+extension MainDependencyContainer: HealthQueryGeneratorFactory {
+    func makeHealthQueryGenerator() -> HealthQuerying {
+        let healthStore = HKHealthStore()
+        let defaults = UserDefaults.standard
+        return HealthQueryGenerator(healthStore: healthStore,
+                                    defaults: defaults)
     }
 }

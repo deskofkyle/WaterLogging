@@ -10,7 +10,7 @@ import Foundation
 
 protocol WaterGoalsStoring {
     var currentGoal: WaterLogGoal { get }
-    func save(goal: WaterLogGoal)
+    func save(goal: WaterLogGoal) -> Result<Bool, Error>
 }
 
 protocol WaterGoalsStorageFactory {
@@ -38,8 +38,10 @@ struct WaterGoalsStorage: WaterGoalsStoring {
         self.defaults = defaults
     }
     
-    func save(goal: WaterLogGoal) {
+    func save(goal: WaterLogGoal) -> Result<Bool, Error> {
+        guard goal.isValid else { return .failure(WaterGoalsStoringError.invalidGoal) }
         defaults.setValue(goal.amount,
                           forKey: Constants.goalsStorageKey)
+        return .success(true)
     }
 }

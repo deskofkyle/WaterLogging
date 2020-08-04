@@ -42,21 +42,47 @@ final class CoreDataInterface: NSPersistentContainer {
 
     // MARK: - Core Data Saving support
 
-    func saveContext() {
-        let context = viewContext
-        if context.hasChanges {
+    func saveContext() -> Result<Bool, Error> {
+        let managedContext = viewContext
+        if managedContext.hasChanges {
             do {
-                try context.save()
+                try managedContext.save()
+                return .success(true)
             } catch {
-                // no-op
+                return .failure(CoreDataInterfacingError.fetchFailure)
             }
         }
+        
+        return .success(true)
     }
 }
 
 extension CoreDataInterface: CoreDataInterfacing {
     var todaysWaterIntake: Result<Double, Error> {
-        return .success(300)
+        let managedContext = viewContext
+
+        let recordFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "WaterLoggingRecord")
+         
+        do {
+            guard let records = try managedContext.fetch(recordFetch) as? [NSManagedObject] else {
+                return .failure(CoreDataInterfacingError.fetchFailure)
+            }
+            
+            let result: [WaterLogRecord] = records.compactMap { record in
+                guard let amount = record.value(forKey: "amount") as? Double,
+                    let createdAt = record.value(forKey: "createdAt") as? Date,
+                    let lastedUpdated = record.value(forKey: "lastUpdated") as? Date else { return nil }
+                let waterLogRecord = WaterLogRecord(amount: amount,
+                                                    createdAt: createdAt,
+                                                    lastUpdated: lastedUpdated)
+                return waterLogRecord
+            }
+            
+            let sum = result.map { $0.amount }.reduce(0, +)
+            return .success(sum)
+        } catch {
+            return .failure(CoreDataInterfacingError.fetchFailure)
+        }
     }
 
     func save(record: WaterLogRecord) -> Result<Bool, Error> {
@@ -71,11 +97,6 @@ extension CoreDataInterface: CoreDataInterfacing {
         object.setValue(record.createdAt, forKeyPath: "createdAt")
         object.setValue(record.lastUpdated, forKeyPath: "lastUpdated")
 
-        do {
-            try managedContext.save()
-            return .success(true)
-        } catch let error as NSError {
-            return .failure(error)
-        }
+        return saveContext()
     }
 }

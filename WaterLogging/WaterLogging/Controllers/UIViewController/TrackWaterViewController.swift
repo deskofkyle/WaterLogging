@@ -74,7 +74,7 @@ final class TrackWaterViewController: UIViewController {
     
     private func failureAlert(error: Error) -> UIAlertController {
         let alert = UIAlertController(title: "Failure",
-                                      message: "There was a failiure saving your record. \(error.localizedDescription)",
+                                      message: "There was a failure saving. \(error.localizedDescription)",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok",
                                       style: .default,
@@ -158,8 +158,13 @@ final class TrackWaterViewController: UIViewController {
         view.endEditing(true)
         let amount = Double(enterGoalAmountTextField.text ?? "") ?? 0
         let goal = WaterLogGoal(amount: amount)
-        waterGoalsStorage.save(goal: goal)
-        displaySuccess()
+        let result = waterGoalsStorage.save(goal: goal)
+        switch result {
+        case .success:
+            displaySuccess()
+        case .failure(let error):
+            displayError(error: error)
+        }
         
         // Reset the text field after submission
         enterGoalAmountTextField.text = ""

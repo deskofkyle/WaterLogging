@@ -32,11 +32,16 @@ final class AppTabBarController: UITabBarController {
         let addImage = UIImage(systemName: "plus.circle")
         let vizImage = UIImage(systemName: "chart.bar")
         
-        trackWaterViewController.tabBarItem = UITabBarItem(title: "Track", image: addImage, tag: 0)
-        visualizeWaterIntakeViewController.tabBarItem = UITabBarItem(title: "Visualize", image: vizImage, tag: 1)
+        trackWaterViewController.tabBarItem = UITabBarItem(title: "Track",
+                                                           image: addImage,
+                                                           tag: 0)
+        visualizeWaterIntakeViewController.tabBarItem = UITabBarItem(title: "Visualize",
+                                                                     image: vizImage,
+                                                                     tag: 1)
 
-        let tabBarList = [trackWaterViewController, visualizeWaterIntakeViewController].map { UINavigationController(rootViewController: $0) }
-
+        let tabBarList = [trackWaterViewController,
+                          visualizeWaterIntakeViewController]
+            .map { UINavigationController(rootViewController: $0) }
         viewControllers = tabBarList
     }
 }

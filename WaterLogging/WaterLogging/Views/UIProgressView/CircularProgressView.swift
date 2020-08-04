@@ -9,17 +9,6 @@
 import Foundation
 import UIKit
 
-struct CircularProgressViewModel {
-    let color: UIColor
-    let currentValue: Double
-    let maxValue: Double
-    
-    var progress: Float {
-        let result = currentValue / maxValue
-        return Float(result.isNaN ? 0 : result)
-    }
-}
-
 final class CircularProgressView: UIView {
     private enum Constants {
         static let borderWidth: CGFloat = 12
@@ -189,7 +178,6 @@ final class CircularProgressView: UIView {
         self.viewModel = viewModel
         primaryStat.text = "\(viewModel.currentValue)"
         secondaryStat.text = "\(viewModel.maxValue)"
-        setNeedsDisplay()
     }
 
     /// Will animate the center label from 0 to the max value
