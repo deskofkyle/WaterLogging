@@ -24,19 +24,23 @@ extension MainDependencyContainer: TabBarControllerFactory {
 
 extension MainDependencyContainer: TrackWaterViewControllerFactory {
     func makeTrackWaterViewController() -> TrackWaterViewController {
+        let healthQueryGenerator = makeHealthQueryGenerator()
         let waterLoggingStorage = makeWaterLoggingStorage()
         let waterGoalsStorage = makeWaterGoalsStorage()
-        return TrackWaterViewController(waterLoggingStorage: waterLoggingStorage,
+        return TrackWaterViewController(healthQueryGenerator: healthQueryGenerator,
+                                        waterLoggingStorage: waterLoggingStorage,
                                         waterGoalsStorage: waterGoalsStorage)
     }
 }
 
 extension MainDependencyContainer: VisualizeWaterIntakeViewControllerFactory {
     func makeVisualizeWaterIntakeViewController() -> VisualizeWaterIntakeViewController {
-        let waterLoggingStorage = makeWaterLoggingStorage()
+        let waterGoalGenerator = makeWaterGoalGenerator()
         let waterGoalsStorage = makeWaterGoalsStorage()
-        return VisualizeWaterIntakeViewController(waterLoggingStorage: waterLoggingStorage,
-                                                  waterGoalsStorage: waterGoalsStorage)
+        let waterLoggingStorage = makeWaterLoggingStorage()
+        return VisualizeWaterIntakeViewController(waterGoalGenerator: waterGoalGenerator,
+                                                  waterGoalsStorage: waterGoalsStorage,
+                                                  waterLoggingStorage: waterLoggingStorage)
     }
 }
 
@@ -66,5 +70,12 @@ extension MainDependencyContainer: HealthQueryGeneratorFactory {
         let defaults = UserDefaults.standard
         return HealthQueryGenerator(healthStore: healthStore,
                                     defaults: defaults)
+    }
+}
+
+extension MainDependencyContainer: WaterGoalGeneratorFactory {
+    func makeWaterGoalGenerator() -> WaterGoalGenerating {
+        let healthQueryGenerator = makeHealthQueryGenerator()
+        return WaterGoalGenerator(healthQueryGenerator: healthQueryGenerator)
     }
 }

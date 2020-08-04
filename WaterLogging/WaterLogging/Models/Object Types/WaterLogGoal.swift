@@ -14,6 +14,7 @@ struct WaterLogGoal {
         static let maxWaterGoal: Double = 5000
     }
 
+    /// A water goal amount (mL)
     let amount: Double
 
     /**

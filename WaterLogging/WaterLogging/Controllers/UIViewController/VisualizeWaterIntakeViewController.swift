@@ -45,13 +45,34 @@ final class VisualizeWaterIntakeViewController: UIViewController {
         return stackView
     }()
     
-    private let waterLoggingStorage: WaterLoggingStoring
+    private let goalLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.text = "Goal Calculation"
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let goalDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.text = "Based on data from Health, your goal should be 2000 mL of water per day. Your weight was last updated at [Date] with a value of [Weight]."
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let waterGoalGenerator: WaterGoalGenerating
     private let waterGoalsStorage: WaterGoalsStoring
+    private let waterLoggingStorage: WaterLoggingStoring
 
-    init(waterLoggingStorage: WaterLoggingStoring,
-         waterGoalsStorage: WaterGoalsStoring) {
-        self.waterLoggingStorage = waterLoggingStorage
+    init(waterGoalGenerator: WaterGoalGenerating,
+         waterGoalsStorage: WaterGoalsStoring,
+         waterLoggingStorage: WaterLoggingStoring) {
+        self.waterGoalGenerator = waterGoalGenerator
         self.waterGoalsStorage = waterGoalsStorage
+        self.waterLoggingStorage = waterLoggingStorage
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -62,6 +83,7 @@ final class VisualizeWaterIntakeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        calculateWaterGoal()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,9 +100,16 @@ final class VisualizeWaterIntakeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubview(mainStackView)
-        
+
         mainStackView.insertArrangedSubview(circularProgressView,
                                             at: mainStackView.arrangedSubviews.count)
+        
+        if waterGoalGenerator.canGenerateGoal {
+            mainStackView.insertArrangedSubview(goalLabel,
+                                                at: mainStackView.arrangedSubviews.count)
+            mainStackView.insertArrangedSubview(goalDescriptionLabel,
+                                                at: mainStackView.arrangedSubviews.count)
+        }
         
         mainStackView.insertArrangedSubview(UIView(),
                                             at: mainStackView.arrangedSubviews.count)
@@ -96,6 +125,30 @@ final class VisualizeWaterIntakeViewController: UIViewController {
             circularProgressView.widthAnchor.constraint(equalTo: circularProgressView.heightAnchor,
                                                         multiplier: 1)
         ])
+    }
+    
+    private func calculateWaterGoal() {
+        waterGoalGenerator.generateWaterGoal { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let newGoal):
+                self.save(newGoal: newGoal)
+            case .failure:
+                // In the failure case, we will not display an error to the user. We will depend on the default water intake goal.
+                break
+            }
+        }
+    }
+    
+    private func save(newGoal: WaterLogGoal) {
+        let result = waterGoalsStorage.save(goal: newGoal)
+        switch result {
+        case .success:
+            print("Water Log Goal updated from HealthKit")
+            break
+        case .failure(let error):
+            displayError(error: error)
+        }
     }
     
     private func displayError(error: Error) {
