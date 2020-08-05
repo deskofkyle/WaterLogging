@@ -9,7 +9,7 @@
 import Foundation
 
 enum WaterLoggingStoringError: Error {
-    /// This `WaterLogRecord`  does not pass `WaterLogRecord.isValid` validation.
+    /// This `WaterLogRecord`  does not pass `WaterLogRecord.isValid(amount: Double)` validation.
     case invalidRecord
 }
 

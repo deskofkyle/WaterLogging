@@ -11,11 +11,11 @@ import UIKit
 
 struct CircularProgressViewModel {
     let color: UIColor
-    let currentValue: Double
-    let maxValue: Double
+    let currentValue: Int
+    let maxValue: Int
     
-    var progress: Float {
-        let result = currentValue / maxValue
-        return Float(result.isNaN ? 0 : result)
+    var progress: Double {
+        let result = Double(currentValue) / Double(maxValue)
+        return Double(result.isNaN ? 0 : result)
     }
 }

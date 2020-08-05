@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HealthQuerying {
-    var hasGrantedPermission: Bool { get }
+    var hasRequestedAuthorization: Bool { get }
     func authorizeHealth(completion: @escaping (Result<Bool, HealthQueryingError>) -> Void)
-    func queryCurrentWeight(completion: @escaping (Result<Double, HealthQueryingError>) -> Void)
+    func queryCurrentWeight(completion: @escaping (Result<UserWeight, HealthQueryingError>) -> Void)
 }

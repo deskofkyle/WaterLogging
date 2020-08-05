@@ -13,14 +13,14 @@ protocol VisualizeWaterIntakeViewControllerFactory {
 final class VisualizeWaterIntakeViewController: UIViewController {
     
     private var circularProgressViewModel: CircularProgressViewModel {
-        let todaysProgress: Double
+        let todaysProgress: Int
 
         let todaysWaterIntake = waterLoggingStorage.todaysWaterIntake
         switch todaysWaterIntake {
         case .success(let currentValue):
             todaysProgress = currentValue
         case .failure(let error):
-            todaysProgress = 0.0
+            todaysProgress = 0
             displayError(error: error)
         }
 
@@ -57,7 +57,7 @@ final class VisualizeWaterIntakeViewController: UIViewController {
     private let goalDescriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.text = "Based on data from Health, your goal should be 2000 mL of water per day. Your weight was last updated at [Date] with a value of [Weight]."
+        label.text = "Based on data from Health, your goal will be automatically calculated if weight data is available."
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -74,32 +74,44 @@ final class VisualizeWaterIntakeViewController: UIViewController {
         self.waterGoalsStorage = waterGoalsStorage
         self.waterLoggingStorage = waterLoggingStorage
         super.init(nibName: nil, bundle: nil)
+        addObservers()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        calculateWaterGoal()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        /// Refresh progress view to refresh values after new submissions
-        circularProgressView.configure(viewModel: circularProgressViewModel)
+        // Update water goal if weight has changed in Health
+        calculateWaterGoal()
+        
+        // Refresh progress to display new submissions
+        refreshProgress()
     }
     
-    // Set Up
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(calculateWaterGoal),
+                                               name: NSNotification.Name("healthAuthorizationStatusChanged"), object: nil)
+    }
 
     private func setUp() {
         title = "Visualize"
         view.backgroundColor = .systemBackground
         
         view.addSubview(mainStackView)
+        setupStack()
+    }
+    
+    private func setupStack() {
+        mainStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
         mainStackView.insertArrangedSubview(circularProgressView,
                                             at: mainStackView.arrangedSubviews.count)
@@ -126,8 +138,13 @@ final class VisualizeWaterIntakeViewController: UIViewController {
                                                         multiplier: 1)
         ])
     }
+
+    /// Refresh progress view to refresh values after new submissions
+    private func refreshProgress() {
+        circularProgressView.configure(viewModel: circularProgressViewModel)
+    }
     
-    private func calculateWaterGoal() {
+    @objc private func calculateWaterGoal() {
         waterGoalGenerator.generateWaterGoal { [weak self] (result) in
             guard let self = self else { return }
             switch result {
@@ -144,8 +161,8 @@ final class VisualizeWaterIntakeViewController: UIViewController {
         let result = waterGoalsStorage.save(goal: newGoal)
         switch result {
         case .success:
-            print("Water Log Goal updated from HealthKit")
-            break
+            // Refresh progress to display updated goal
+            self.refreshProgress()
         case .failure(let error):
             displayError(error: error)
         }

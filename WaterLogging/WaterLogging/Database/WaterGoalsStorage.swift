@@ -28,7 +28,7 @@ struct WaterGoalsStorage: WaterGoalsStoring {
     
     /// Provides the current goal value from user detaults if one is set. If not, it will return the default goal.
     var currentGoal: WaterLogGoal {
-        let savedValue = defaults.double(forKey: Constants.goalsStorageKey)
+        let savedValue = defaults.integer(forKey: Constants.goalsStorageKey)
         return savedValue == 0 ?
             Constants.defaultGoal :
             WaterLogGoal(amount: savedValue)

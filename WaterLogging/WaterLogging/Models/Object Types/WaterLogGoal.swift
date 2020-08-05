@@ -11,11 +11,11 @@ import Foundation
 struct WaterLogGoal {
     private enum Constants {
         /// Represents the maxium water amount (mL) you can set as a goal
-        static let maxWaterGoal: Double = 5000
+        static let maxWaterGoal = 5000
     }
 
     /// A water goal amount (mL)
-    let amount: Double
+    let amount: Int
 
     /**
      Determines if the goal is valid and that it can successfully be saved to User Defaults

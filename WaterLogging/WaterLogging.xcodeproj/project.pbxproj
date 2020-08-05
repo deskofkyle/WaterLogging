@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E11D50324DA2CFF00B8A8AF /* WaterLogStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E11D50224DA2CFF00B8A8AF /* WaterLogStorage.swift */; };
+		6E11D50524DA2D5900B8A8AF /* WaterLogRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E11D50424DA2D5900B8A8AF /* WaterLogRecord.swift */; };
+		6E11D50724DA69BA00B8A8AF /* UserWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E11D50624DA69BA00B8A8AF /* UserWeight.swift */; };
 		6E1EE24324D792F700E9F336 /* WaterGoalsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */; };
 		6E1EE24524D794BE00E9F336 /* WaterLogProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */; };
 		6E1EE24724D7A41300E9F336 /* WaterGoalsStoringError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE24624D7A41300E9F336 /* WaterGoalsStoringError.swift */; };
@@ -20,8 +23,6 @@
 		6E1EE25B24D91D4700E9F336 /* WaterGoalGenerating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE25A24D91D4700E9F336 /* WaterGoalGenerating.swift */; };
 		6E1EE25D24D921C100E9F336 /* WaterGoalGeneratingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE25C24D921C100E9F336 /* WaterGoalGeneratingError.swift */; };
 		6E374D2424D3A0F8003A8A8F /* MainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D2324D3A0F8003A8A8F /* MainDependencyContainer.swift */; };
-		6E9E24FC24D3DD7E00B349DE /* WaterLogRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374CF624D39F44003A8A8F /* WaterLogRecord.swift */; };
-		6E9E24FE24D3DD8600B349DE /* WaterLoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D1C24D3A047003A8A8F /* WaterLoggingStorage.swift */; };
 		6E9E24FF24D3DD8600B349DE /* CoreDataInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */; };
 		6E9E250024D3DD8E00B349DE /* VisualizeWaterIntakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1EE24734EE8007708F4 /* VisualizeWaterIntakeViewController.swift */; };
 		6E9E250424D3DD8E00B349DE /* TrackWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA1EC24734EC7007708F4 /* TrackWaterViewController.swift */; };
@@ -52,6 +53,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E11D50224DA2CFF00B8A8AF /* WaterLogStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogStorage.swift; sourceTree = "<group>"; };
+		6E11D50424DA2D5900B8A8AF /* WaterLogRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogRecord.swift; sourceTree = "<group>"; };
+		6E11D50624DA69BA00B8A8AF /* UserWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWeight.swift; sourceTree = "<group>"; };
 		6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalsStorage.swift; sourceTree = "<group>"; };
 		6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogProgress.swift; sourceTree = "<group>"; };
 		6E1EE24624D7A41300E9F336 /* WaterGoalsStoringError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalsStoringError.swift; sourceTree = "<group>"; };
@@ -66,8 +70,6 @@
 		6E1EE25A24D91D4700E9F336 /* WaterGoalGenerating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalGenerating.swift; sourceTree = "<group>"; };
 		6E1EE25C24D921C100E9F336 /* WaterGoalGeneratingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalGeneratingError.swift; sourceTree = "<group>"; };
 		6E374CD024D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WaterLoggingDataModel.xcdatamodel; sourceTree = "<group>"; };
-		6E374CF624D39F44003A8A8F /* WaterLogRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogRecord.swift; sourceTree = "<group>"; };
-		6E374D1C24D3A047003A8A8F /* WaterLoggingStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLoggingStorage.swift; sourceTree = "<group>"; };
 		6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInterface.swift; sourceTree = "<group>"; };
 		6E374D2324D3A0F8003A8A8F /* MainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDependencyContainer.swift; sourceTree = "<group>"; };
 		6E9E250E24D7735300B349DE /* SolidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButton.swift; sourceTree = "<group>"; };
@@ -113,9 +115,10 @@
 		6E1EE24C24D7DCE900E9F336 /* Object Types */ = {
 			isa = PBXGroup;
 			children = (
-				6E374CF624D39F44003A8A8F /* WaterLogRecord.swift */,
 				6E9E251824D78BAC00B349DE /* WaterLogGoal.swift */,
 				6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */,
+				6E11D50424DA2D5900B8A8AF /* WaterLogRecord.swift */,
+				6E11D50624DA69BA00B8A8AF /* UserWeight.swift */,
 			);
 			path = "Object Types";
 			sourceTree = "<group>";
@@ -145,7 +148,7 @@
 			children = (
 				6E374CCF24D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodeld */,
 				6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */,
-				6E374D1C24D3A047003A8A8F /* WaterLoggingStorage.swift */,
+				6E11D50224DA2CFF00B8A8AF /* WaterLogStorage.swift */,
 				6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */,
 			);
 			path = Database;
@@ -259,11 +262,11 @@
 				B31AA1C724734EAB007708F4 /* AppDelegate.swift */,
 				B31AA1C924734EAB007708F4 /* SceneDelegate.swift */,
 				6E9E250B24D3DF2800B349DE /* Dependency Injection */,
+				6EF9FB8924D78FB7000BA7B4 /* Extensions */,
 				6E9E250624D3DDB700B349DE /* Models */,
 				6E1EE25124D8EA4400E9F336 /* Health */,
 				6E9E250724D3DDC300B349DE /* Database */,
 				6E9E250D24D772AD00B349DE /* Views */,
-				6EF9FB8924D78FB7000BA7B4 /* Extensions */,
 				6E9E250824D3DDFC00B349DE /* Controllers */,
 				B31AA1D324734EAB007708F4 /* Assets.xcassets */,
 				B31AA1D524734EAB007708F4 /* LaunchScreen.storyboard */,
@@ -344,8 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E1EE24324D792F700E9F336 /* WaterGoalsStorage.swift in Sources */,
+				6E11D50524DA2D5900B8A8AF /* WaterLogRecord.swift in Sources */,
 				6E9E250C24D3E81400B349DE /* WaterLoggingDataModel.xcdatamodeld in Sources */,
-				6E9E24FC24D3DD7E00B349DE /* WaterLogRecord.swift in Sources */,
 				B31AA1C824734EAB007708F4 /* AppDelegate.swift in Sources */,
 				6E1EE24524D794BE00E9F336 /* WaterLogProgress.swift in Sources */,
 				6E374D2424D3A0F8003A8A8F /* MainDependencyContainer.swift in Sources */,
@@ -355,17 +358,18 @@
 				6E1EE25024D7DDAF00E9F336 /* CircularProgressViewModel.swift in Sources */,
 				6E9E250524D3DD8E00B349DE /* AppTabBarController.swift in Sources */,
 				6E1EE25524D8EA6200E9F336 /* HealthQueryGenerator.swift in Sources */,
-				6E9E24FE24D3DD8600B349DE /* WaterLoggingStorage.swift in Sources */,
 				6E1EE24E24D7DD2100E9F336 /* CoreDataInterfacingError.swift in Sources */,
 				6E9E24FF24D3DD8600B349DE /* CoreDataInterface.swift in Sources */,
 				6E1EE25324D8EA5B00E9F336 /* HealthQuerying.swift in Sources */,
 				6E9E251924D78BAC00B349DE /* WaterLogGoal.swift in Sources */,
 				6EF9FB8B24D78FCB000BA7B4 /* UIFont+Rounded.swift in Sources */,
+				6E11D50724DA69BA00B8A8AF /* UserWeight.swift in Sources */,
 				B31AA1CA24734EAB007708F4 /* SceneDelegate.swift in Sources */,
 				6E1EE25D24D921C100E9F336 /* WaterGoalGeneratingError.swift in Sources */,
 				6E9E250F24D7735300B349DE /* SolidButton.swift in Sources */,
 				6E1EE25724D8ECF100E9F336 /* HealthQueryingError.swift in Sources */,
 				6E9E251724D781C200B349DE /* CircularProgressView.swift in Sources */,
+				6E11D50324DA2CFF00B8A8AF /* WaterLogStorage.swift in Sources */,
 				6E1EE25B24D91D4700E9F336 /* WaterGoalGenerating.swift in Sources */,
 				6E1EE24724D7A41300E9F336 /* WaterGoalsStoringError.swift in Sources */,
 				6E9E251424D77DD700B349DE /* WaterLoggingStoringError.swift in Sources */,

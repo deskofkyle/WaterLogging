@@ -10,8 +10,8 @@ import CoreData
 import Foundation
 
 protocol CoreDataInterfacing {
-    var todaysWaterIntake: Result<Double, Error> { get }
-    func save(record: WaterLogRecord) -> Result<Bool, Error>
+    var todaysWaterIntake: Result<Int, Error> { get }
+    func save(amount: Double) -> Result<Bool, Error>
 }
 
 protocol CoreDataInterfaceFactory {
@@ -58,44 +58,41 @@ final class CoreDataInterface: NSPersistentContainer {
 }
 
 extension CoreDataInterface: CoreDataInterfacing {
-    var todaysWaterIntake: Result<Double, Error> {
+    var todaysWaterIntake: Result<Int, Error> {
         let managedContext = viewContext
 
-        let recordFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "WaterLoggingRecord")
+        let recordFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "WaterLogRecord")
          
         do {
             guard let records = try managedContext.fetch(recordFetch) as? [NSManagedObject] else {
                 return .failure(CoreDataInterfacingError.fetchFailure)
             }
             
-            let result: [WaterLogRecord] = records.compactMap { record in
+            let result: [Double] = records.compactMap { record in
                 guard let amount = record.value(forKey: "amount") as? Double,
                     let createdAt = record.value(forKey: "createdAt") as? Date,
                     let lastedUpdated = record.value(forKey: "lastUpdated") as? Date else { return nil }
-                let waterLogRecord = WaterLogRecord(amount: amount,
-                                                    createdAt: createdAt,
-                                                    lastUpdated: lastedUpdated)
-                return waterLogRecord
+                return amount
             }
             
-            let sum = result.map { $0.amount }.reduce(0, +)
+            let sum = Int(result.reduce(0, +))
             return .success(sum)
         } catch {
             return .failure(CoreDataInterfacingError.fetchFailure)
         }
     }
 
-    func save(record: WaterLogRecord) -> Result<Bool, Error> {
+    func save(amount: Double) -> Result<Bool, Error> {
         let managedContext = viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName: "WaterLoggingRecord",
+        let entity = NSEntityDescription.entity(forEntityName: "WaterLogRecord",
                                                 in: managedContext)!
         let object = NSManagedObject(entity: entity,
                                      insertInto: managedContext)
         
-        object.setValue(record.amount, forKeyPath: "amount")
-        object.setValue(record.createdAt, forKeyPath: "createdAt")
-        object.setValue(record.lastUpdated, forKeyPath: "lastUpdated")
+        object.setValue(amount, forKeyPath: "amount")
+        object.setValue(Date(), forKeyPath: "createdAt")
+        object.setValue(Date(), forKeyPath: "lastUpdated")
 
         return saveContext()
     }

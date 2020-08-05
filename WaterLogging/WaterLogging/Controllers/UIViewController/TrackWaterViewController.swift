@@ -235,10 +235,7 @@ final class TrackWaterViewController: UIViewController {
     @objc private func addWaterButtonPressed() {
         view.endEditing(true)
         let amount = Double(enterWaterAmountTextField.text ?? "") ?? 0
-        let record = WaterLogRecord(amount: amount,
-                              createdAt: Date(),
-                              lastUpdated: Date())
-        let result = waterLoggingStorage.save(record: record)
+        let result = waterLoggingStorage.save(amount: amount)
         switch result {
         case .success:
             displayEntrySuccess()
@@ -252,7 +249,7 @@ final class TrackWaterViewController: UIViewController {
     
     @objc private func goalButtonPressed() {
         view.endEditing(true)
-        let amount = Double(enterGoalAmountTextField.text ?? "") ?? 0
+        let amount = Int(enterGoalAmountTextField.text ?? "") ?? 0
         let goal = WaterLogGoal(amount: amount)
         let result = waterGoalsStorage.save(goal: goal)
         switch result {
@@ -271,8 +268,7 @@ final class TrackWaterViewController: UIViewController {
             guard let self = self else { return }
             switch result {
             case .success:
-                // In this case, the user has seen the Health permissions screen. We can expand this to display a visual representation that the user has seen the Health permission already.
-                break
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "healthAuthorizationStatusChanged")))
             case .failure(let error):
                 self.displayError(error: error)
             }

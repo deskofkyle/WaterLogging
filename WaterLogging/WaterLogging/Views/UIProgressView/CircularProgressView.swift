@@ -161,7 +161,7 @@ final class CircularProgressView: UIView {
             infoStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 12),
             infoStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -12),
             infoStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -34),
-            infoStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 54),
+            infoStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 34),
             
             // Stat Units
             primaryStatUnit.heightAnchor.constraint(equalToConstant: 21),
@@ -178,10 +178,5 @@ final class CircularProgressView: UIView {
         self.viewModel = viewModel
         primaryStat.text = "\(viewModel.currentValue)"
         secondaryStat.text = "\(viewModel.maxValue)"
-    }
-
-    /// Will animate the center label from 0 to the max value
-    func showProgress() {
-        
     }
 }

@@ -16,18 +16,19 @@ protocol HealthQueryGeneratorFactory {
 final class HealthQueryGenerator: HealthQuerying {
     
     private enum Constants {
-        static let hasGrantedPermissionKey = "com.WaterLogging.hasHealthPermissionEnabled"
+        static let hasRequestedAuthorizationKey = "com.WaterLogging.hasRequestedAuthorization"
+        static let canQueryWeightKey = "com.WaterLogging.canQueryWeight"
     }
     
     /// Determines if the user has authorized all HealthKit permissions
-    var hasGrantedPermission: Bool {
+    var hasRequestedAuthorization: Bool {
         set {
             UserDefaults.standard.set(newValue,
-                                      forKey: Constants.hasGrantedPermissionKey)
+                                      forKey: Constants.hasRequestedAuthorizationKey)
         }
         
         get {
-            return UserDefaults.standard.bool(forKey: Constants.hasGrantedPermissionKey)
+            return UserDefaults.standard.bool(forKey: Constants.hasRequestedAuthorizationKey)
         }
     }
     
@@ -44,57 +45,65 @@ final class HealthQueryGenerator: HealthQuerying {
     // https://developer.apple.com/documentation/healthkit/authorizing_access_to_health_data
     // Referenced the authorization of HealthKit documentation
     func authorizeHealth(completion: @escaping (Result<Bool, HealthQueryingError>) -> Void) {
-        guard !hasGrantedPermission else {
-            completion(.failure(.permissionExpired))
+        guard HKHealthStore.isHealthDataAvailable() else {
+            completion(.failure(.healthNotAvailable))
+            return
+        }
+
+        guard !hasRequestedAuthorization else {
+            completion(.failure(.alreadyRequested))
             return
         }
         
         let bodyMass = Set([HKObjectType.quantityType(forIdentifier: .bodyMass)!])
 
-        healthStore.requestAuthorization(toShare: [], read: bodyMass) { [weak self] (success, error) in
+        healthStore.requestAuthorization(toShare: [], read: bodyMass) { [weak self] (canQueryWeight, error) in
             guard let self = self else { return }
-
-            guard success else {
-                DispatchQueue.main.async {
-                    completion(.failure(.userDenied))
-                }
-                return
-            }
-            
-            self.hasGrantedPermission = true
+            self.hasRequestedAuthorization = true
             DispatchQueue.main.async {
-                completion(.success(true))
+                completion(.success((canQueryWeight)))
             }
         }
     }
 
     // Citation on queries:
     // https://developer.apple.com/documentation/healthkit/reading_data_from_healthkit
-    func queryCurrentWeight(completion: @escaping (Result<Double, HealthQueryingError>) -> Void) {
+    func queryCurrentWeight(completion: @escaping (Result<UserWeight, HealthQueryingError>) -> Void) {
+        guard HKHealthStore.isHealthDataAvailable() else {
+            completion(.failure(.healthNotAvailable))
+            return
+        }
+        
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
+        let todaysDatePredicate = HKQuery.predicateForSamples(withStart: Calendar.current.startOfDay(for: Date()),
+                                                              end: Date(),
+                                                              options: [])
         let query = HKSampleQuery(sampleType: HKObjectType.quantityType(forIdentifier: .bodyMass)!,
-                                  predicate: nil,
+                                  predicate: todaysDatePredicate,
                                   limit: 1,
                                   sortDescriptors: [sortDescriptor]) { (query, results, error) in
                                     
-                                    guard error != nil else {
+                                    print("\(query), \(results), \(error)")
+                                    
+                                    guard error == nil else {
                                         DispatchQueue.main.async {
-                                            completion(.failure(HealthQueryingError.queryFailure))
+                                            completion(.failure(HealthQueryingError.queryFailure(error: error)))
                                         }
                                         return
                                     }
                                     
                                     guard let results = results,
-                                        let mostRecentSample = results.first as? HKQuantitySample else {
+                                        let mostRecentSample = results.last as? HKQuantitySample else {
                                             DispatchQueue.main.async {
                                                 completion(.failure(HealthQueryingError.noDataAvailable))
                                             }
                                             return
                                     }
                                     
-                                    let weight = mostRecentSample.quantity.doubleValue(for: .pound())
+                                    let pounds = mostRecentSample.quantity.doubleValue(for: .pound())
                                     DispatchQueue.main.async {
+                                        let weight = UserWeight(pounds: pounds)
                                         completion(.success(weight))
                                     }
                                     

@@ -17,7 +17,7 @@ extension WaterGoalGeneratingError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .healthUnavailable:
-            return NSLocalizedString("Reading from Health is not available",
+            return NSLocalizedString("There was an error reading from Health. Please enable this app's access to health data in Settings > Privacy > Health > WaterLogging.",
                                      comment: "")
         }
     }

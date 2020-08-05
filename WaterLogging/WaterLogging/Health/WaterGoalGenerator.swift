@@ -15,18 +15,12 @@ protocol WaterGoalGeneratorFactory {
 struct WaterGoalGenerator: WaterGoalGenerating {
     
     private enum Constants {
-        // Reference: https://www.asknumbers.com/oz-to-ml.aspx#:~:text=1%20Fluid%20ounce%20(oz)%20is,473.176473%20mL%20is%2016%20oz.
+        // Citation: https://www.asknumbers.com/oz-to-ml.aspx#:~:text=1%20Fluid%20ounce%20(oz)%20is,473.176473%20mL%20is%2016%20oz.
         static let ouncesToMillilitersRatio: Double = 29.5735296
     }
     
-    // Reference: https://www.nature.com/articles/ejcn2012157
-    //    Original water requirement studies are between 60 and 100 years old. Commonly published water requirement equations are based on just a few historical studies that do not satisfy more rigorous modern scientific method. Practitioners would be prudent to use water requirement equations as a guide only while employing additional means (such as monitoring short-term weight changes, physical or biochemical parameters and urine output volumes) to ensure the adequacy of water provision in clinical care or health-care settings.
-    
-    // https://www.umsystem.edu/totalrewards/wellness/how-to-calculate-how-much-water-you-should-drink
-//    Your weight is one variable that changes the amount of water you should be drinking. To help you establish a baseline, you can use the following rule-of-thumb equation. In short, the equation tells you to take half your body weight, and drink that amount in ounces of water. In the example, notice that you should be drinking more than 12 glasses of water, not eight!
-    
     var canGenerateGoal: Bool {
-        return healthQueryGenerator.hasGrantedPermission
+        return healthQueryGenerator.hasRequestedAuthorization
     }
     
     private let healthQueryGenerator: HealthQuerying
@@ -39,12 +33,20 @@ struct WaterGoalGenerator: WaterGoalGenerating {
         healthQueryGenerator.queryCurrentWeight { result in
             switch result {
             case .success(let weight):
-                let ouncesGoal = weight / 2
-                let milliLitersGoal = ouncesGoal * Constants.ouncesToMillilitersRatio
-                completion(.success(WaterLogGoal(amount: milliLitersGoal)))
+                completion(.success(self.waterGoal(from: weight)))
             case .failure:
                 completion(.failure(WaterGoalGeneratingError.healthUnavailable))
             }
         }
+    }
+ 
+    /// Calulates a general water goal (`WaterLogGoal` from a given weight in pounds (lbs).
+    /// This calculation is based on "rule of thumb" water intake recommendations based on weight. (See: https://www.umsystem.edu/totalrewards/wellness/how-to-calculate-how-much-water-you-should-drink)
+    /// From other research (See: https://www.nature.com/articles/ejcn2012157), ideal water intake is based on a number of factors like gender, level of activity, diet, etc. There is no empirically backed water intake estimation formula based on weight alone.  "Rule of thumb" measurements should not be relied upon as a medical recommendation. Patients should work with their providers to understand how much water they should drink per day.
+    /// This formula represents the "Rule of Thumb" calculation which take a weight in pounds (lbs), divided by two to represent the amount of water you should drink in ounces. This measurement then needs to be converted to milliliters (mL).
+    func waterGoal(from weight: UserWeight) -> WaterLogGoal {
+        let ouncesGoal = weight.pounds / 2
+        let goalsInMilliliters = Int(ouncesGoal * Constants.ouncesToMillilitersRatio)
+        return WaterLogGoal(amount: goalsInMilliliters)
     }
 }
