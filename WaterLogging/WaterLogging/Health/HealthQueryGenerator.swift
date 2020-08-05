@@ -84,8 +84,6 @@ final class HealthQueryGenerator: HealthQuerying {
                                   limit: 1,
                                   sortDescriptors: [sortDescriptor]) { (query, results, error) in
                                     
-                                    print("\(query), \(results), \(error)")
-                                    
                                     guard error == nil else {
                                         DispatchQueue.main.async {
                                             completion(.failure(HealthQueryingError.queryFailure(error: error)))

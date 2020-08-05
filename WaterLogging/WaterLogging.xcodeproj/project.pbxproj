@@ -100,34 +100,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E1EE24B24D7DCDD00E9F336 /* Error Types */ = {
-			isa = PBXGroup;
-			children = (
-				6E1EE24D24D7DD2100E9F336 /* CoreDataInterfacingError.swift */,
-				6E9E251324D77DD700B349DE /* WaterLoggingStoringError.swift */,
-				6E1EE24624D7A41300E9F336 /* WaterGoalsStoringError.swift */,
-				6E1EE25624D8ECF100E9F336 /* HealthQueryingError.swift */,
-				6E1EE25C24D921C100E9F336 /* WaterGoalGeneratingError.swift */,
-			);
-			path = "Error Types";
-			sourceTree = "<group>";
-		};
-		6E1EE24C24D7DCE900E9F336 /* Object Types */ = {
-			isa = PBXGroup;
-			children = (
-				6E9E251824D78BAC00B349DE /* WaterLogGoal.swift */,
-				6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */,
-				6E11D50424DA2D5900B8A8AF /* WaterLogRecord.swift */,
-				6E11D50624DA69BA00B8A8AF /* UserWeight.swift */,
-			);
-			path = "Object Types";
-			sourceTree = "<group>";
-		};
 		6E1EE25124D8EA4400E9F336 /* Health */ = {
 			isa = PBXGroup;
 			children = (
+				6E1EE25624D8ECF100E9F336 /* HealthQueryingError.swift */,
 				6E1EE25224D8EA5B00E9F336 /* HealthQuerying.swift */,
 				6E1EE25424D8EA6200E9F336 /* HealthQueryGenerator.swift */,
+				6E1EE25C24D921C100E9F336 /* WaterGoalGeneratingError.swift */,
 				6E1EE25A24D91D4700E9F336 /* WaterGoalGenerating.swift */,
 				6E1EE25824D91D3C00E9F336 /* WaterGoalGenerator.swift */,
 			);
@@ -137,8 +116,10 @@
 		6E9E250624D3DDB700B349DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6E1EE24B24D7DCDD00E9F336 /* Error Types */,
-				6E1EE24C24D7DCE900E9F336 /* Object Types */,
+				6E9E251824D78BAC00B349DE /* WaterLogGoal.swift */,
+				6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */,
+				6E11D50424DA2D5900B8A8AF /* WaterLogRecord.swift */,
+				6E11D50624DA69BA00B8A8AF /* UserWeight.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,8 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				6E374CCF24D39D72003A8A8F /* WaterLoggingDataModel.xcdatamodeld */,
+				6E1EE24624D7A41300E9F336 /* WaterGoalsStoringError.swift */,
 				6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */,
+				6E9E251324D77DD700B349DE /* WaterLoggingStoringError.swift */,
 				6E11D50224DA2CFF00B8A8AF /* WaterLogStorage.swift */,
+				6E1EE24D24D7DD2100E9F336 /* CoreDataInterfacingError.swift */,
 				6E374D1E24D3A07F003A8A8F /* CoreDataInterface.swift */,
 			);
 			path = Database;

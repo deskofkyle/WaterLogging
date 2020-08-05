@@ -161,7 +161,7 @@ final class CircularProgressView: UIView {
             infoStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 12),
             infoStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -12),
             infoStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -34),
-            infoStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 34),
+            infoStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 44),
             
             // Stat Units
             primaryStatUnit.heightAnchor.constraint(equalToConstant: 21),

@@ -10,8 +10,8 @@ import CoreData
 import Foundation
 
 protocol CoreDataInterfacing {
-    var todaysWaterIntake: Result<Int, Error> { get }
-    func save(amount: Double) -> Result<Bool, Error>
+    var todaysWaterIntake: Result<WaterLogProgress, CoreDataInterfacingError> { get }
+    func save(amount: Double) -> Result<Void, CoreDataInterfacingError>
 }
 
 protocol CoreDataInterfaceFactory {
@@ -19,6 +19,19 @@ protocol CoreDataInterfaceFactory {
 }
 
 final class CoreDataInterface: NSPersistentContainer {
+    
+    // Citation: https://nshipster.com/nspredicate/
+    // Looked up proper syntax for writing predicates
+    private let createdTodayPredicate: NSPredicate = {
+        let calendar = Calendar.current
+        let startDate = calendar.startOfDay(for: Date())
+        let endDate = Date()
+        let startDatePredicate = NSPredicate(format: "createdAt >= %@", startDate as NSDate)
+        let endDatePredicate = NSPredicate(format: "createdAt < %@", endDate as NSDate)
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [startDatePredicate,
+                                                                            endDatePredicate])
+        return predicate
+    }()
     
     override init(name: String, managedObjectModel model: NSManagedObjectModel) {
         super.init(name: name, managedObjectModel: model)
@@ -42,58 +55,47 @@ final class CoreDataInterface: NSPersistentContainer {
 
     // MARK: - Core Data Saving support
 
-    func saveContext() -> Result<Bool, Error> {
+    func saveContext() -> Result<Void, CoreDataInterfacingError> {
         let managedContext = viewContext
         if managedContext.hasChanges {
             do {
                 try managedContext.save()
-                return .success(true)
+                return .success(())
             } catch {
-                return .failure(CoreDataInterfacingError.fetchFailure)
+                return .failure(CoreDataInterfacingError.saveContextFailure)
             }
         }
         
-        return .success(true)
+        return .success(())
     }
 }
 
 extension CoreDataInterface: CoreDataInterfacing {
-    var todaysWaterIntake: Result<Int, Error> {
+    var todaysWaterIntake: Result<WaterLogProgress, CoreDataInterfacingError> {
         let managedContext = viewContext
 
-        let recordFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "WaterLogRecord")
+        let recordFetch: NSFetchRequest<WaterLogRecord> = WaterLogRecord.fetchRequest()
+        recordFetch.predicate = createdTodayPredicate
          
         do {
-            guard let records = try managedContext.fetch(recordFetch) as? [NSManagedObject] else {
-                return .failure(CoreDataInterfacingError.fetchFailure)
-            }
-            
-            let result: [Double] = records.compactMap { record in
-                guard let amount = record.value(forKey: "amount") as? Double,
-                    let createdAt = record.value(forKey: "createdAt") as? Date,
-                    let lastedUpdated = record.value(forKey: "lastUpdated") as? Date else { return nil }
-                return amount
-            }
-            
-            let sum = Int(result.reduce(0, +))
-            return .success(sum)
+            let records = try managedContext.fetch(recordFetch)
+            let sum = records.map { Int($0.amount) }.reduce(0, +)
+            return .success(WaterLogProgress(amount: sum))
         } catch {
             return .failure(CoreDataInterfacingError.fetchFailure)
         }
     }
 
-    func save(amount: Double) -> Result<Bool, Error> {
+    func save(amount: Double) -> Result<Void, CoreDataInterfacingError> {
         let managedContext = viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: "WaterLogRecord",
                                                 in: managedContext)!
-        let object = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
-        
-        object.setValue(amount, forKeyPath: "amount")
-        object.setValue(Date(), forKeyPath: "createdAt")
-        object.setValue(Date(), forKeyPath: "lastUpdated")
-
+        let record = WaterLogRecord(entity: entity,
+                                    insertInto: managedContext)
+        record.amount = Int16(amount)
+        record.createdAt = Date()
+        record.lastUpdated = Date()
         return saveContext()
     }
 }

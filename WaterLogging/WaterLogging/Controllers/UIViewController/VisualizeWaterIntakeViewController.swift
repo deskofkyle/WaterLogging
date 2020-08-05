@@ -13,20 +13,20 @@ protocol VisualizeWaterIntakeViewControllerFactory {
 final class VisualizeWaterIntakeViewController: UIViewController {
     
     private var circularProgressViewModel: CircularProgressViewModel {
-        let todaysProgress: Int
+        let todaysProgress: WaterLogProgress
 
         let todaysWaterIntake = waterLoggingStorage.todaysWaterIntake
         switch todaysWaterIntake {
         case .success(let currentValue):
             todaysProgress = currentValue
         case .failure(let error):
-            todaysProgress = 0
+            todaysProgress = WaterLogProgress(amount: 0)
             displayError(error: error)
         }
 
         let maxValue = waterGoalsStorage.currentGoal.amount
         let viewModel = CircularProgressViewModel(color: .systemIndigo,
-                                                  currentValue: todaysProgress,
+                                                  currentValue: todaysProgress.amount,
                                                   maxValue: maxValue)
         return viewModel
     }

@@ -13,6 +13,8 @@ enum CoreDataInterfacingError: Error {
     case failedToOpenDB
     /// When the database fails to execute a query
     case fetchFailure
+    /// When the database fails to save the current context
+    case saveContextFailure
 }
 
 extension CoreDataInterfacingError: LocalizedError {
@@ -23,6 +25,9 @@ extension CoreDataInterfacingError: LocalizedError {
                                      comment: "")
         case .fetchFailure:
             return NSLocalizedString("Unable to fetch from database.",
+                                     comment: "")
+        case .saveContextFailure:
+            return NSLocalizedString("Unable to save the database context.",
                                      comment: "")
         }
     }
