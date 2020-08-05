@@ -21,7 +21,7 @@ extension WaterLoggingStoringError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidRecord:
-            return NSLocalizedString("The saved value must be greater than zero and less than 5000 mL.",
+            return NSLocalizedString("The saved value must be greater than zero and less than or equal to 6000 mL.",
                                      comment: "")
         case .saveFailure(let error):
             return NSLocalizedString("Unable to save watch intake. \(error.localizedDescription)",

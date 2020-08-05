@@ -10,6 +10,7 @@
 		6E11D50324DA2CFF00B8A8AF /* WaterLogStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E11D50224DA2CFF00B8A8AF /* WaterLogStorage.swift */; };
 		6E11D50524DA2D5900B8A8AF /* WaterLogRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E11D50424DA2D5900B8A8AF /* WaterLogRecord.swift */; };
 		6E11D50724DA69BA00B8A8AF /* UserWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E11D50624DA69BA00B8A8AF /* UserWeight.swift */; };
+		6E12293424DB73AC009D0AD5 /* WaterLoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E12293324DB73AC009D0AD5 /* WaterLoggingTests.swift */; };
 		6E1EE24324D792F700E9F336 /* WaterGoalsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */; };
 		6E1EE24524D794BE00E9F336 /* WaterLogProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */; };
 		6E1EE24724D7A41300E9F336 /* WaterGoalsStoringError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EE24624D7A41300E9F336 /* WaterGoalsStoringError.swift */; };
@@ -39,6 +40,16 @@
 		B31AA1D724734EAB007708F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31AA1D524734EAB007708F4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6E12293624DB73AC009D0AD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B31AA1BC24734EAA007708F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B31AA1C324734EAB007708F4;
+			remoteInfo = WaterLogging;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		6E374CC824D39D0C003A8A8F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -56,6 +67,9 @@
 		6E11D50224DA2CFF00B8A8AF /* WaterLogStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogStorage.swift; sourceTree = "<group>"; };
 		6E11D50424DA2D5900B8A8AF /* WaterLogRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogRecord.swift; sourceTree = "<group>"; };
 		6E11D50624DA69BA00B8A8AF /* UserWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWeight.swift; sourceTree = "<group>"; };
+		6E12293124DB73AC009D0AD5 /* WaterLoggingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterLoggingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E12293324DB73AC009D0AD5 /* WaterLoggingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLoggingTests.swift; sourceTree = "<group>"; };
+		6E12293524DB73AC009D0AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1EE24224D792F700E9F336 /* WaterGoalsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalsStorage.swift; sourceTree = "<group>"; };
 		6E1EE24424D794BE00E9F336 /* WaterLogProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLogProgress.swift; sourceTree = "<group>"; };
 		6E1EE24624D7A41300E9F336 /* WaterGoalsStoringError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalsStoringError.swift; sourceTree = "<group>"; };
@@ -89,6 +103,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6E12292E24DB73AC009D0AD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B31AA1C124734EAB007708F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E12293224DB73AC009D0AD5 /* WaterLoggingTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E12293324DB73AC009D0AD5 /* WaterLoggingTests.swift */,
+				6E12293524DB73AC009D0AD5 /* Info.plist */,
+			);
+			path = WaterLoggingTests;
+			sourceTree = "<group>";
+		};
 		6E1EE25124D8EA4400E9F336 /* Health */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				B31AA1C624734EAB007708F4 /* WaterLogging */,
+				6E12293224DB73AC009D0AD5 /* WaterLoggingTests */,
 				B31AA1C524734EAB007708F4 /* Products */,
 				6EDDA05724D3A5DD004C0F44 /* Frameworks */,
 			);
@@ -235,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				B31AA1C424734EAB007708F4 /* WaterLogging.app */,
+				6E12293124DB73AC009D0AD5 /* WaterLoggingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,6 +294,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6E12293024DB73AC009D0AD5 /* WaterLoggingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E12293A24DB73AC009D0AD5 /* Build configuration list for PBXNativeTarget "WaterLoggingTests" */;
+			buildPhases = (
+				6E12292D24DB73AC009D0AD5 /* Sources */,
+				6E12292E24DB73AC009D0AD5 /* Frameworks */,
+				6E12292F24DB73AC009D0AD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E12293724DB73AC009D0AD5 /* PBXTargetDependency */,
+			);
+			name = WaterLoggingTests;
+			productName = WaterLoggingTests;
+			productReference = 6E12293124DB73AC009D0AD5 /* WaterLoggingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B31AA1C324734EAB007708F4 /* WaterLogging */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B31AA1E624734EAC007708F4 /* Build configuration list for PBXNativeTarget "WaterLogging" */;
@@ -290,6 +340,10 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
+					6E12293024DB73AC009D0AD5 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = B31AA1C324734EAB007708F4;
+					};
 					B31AA1C324734EAB007708F4 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -309,11 +363,19 @@
 			projectRoot = "";
 			targets = (
 				B31AA1C324734EAB007708F4 /* WaterLogging */,
+				6E12293024DB73AC009D0AD5 /* WaterLoggingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6E12292F24DB73AC009D0AD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B31AA1C224734EAB007708F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +388,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6E12292D24DB73AC009D0AD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E12293424DB73AC009D0AD5 /* WaterLoggingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B31AA1C024734EAB007708F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +432,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6E12293724DB73AC009D0AD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B31AA1C324734EAB007708F4 /* WaterLogging */;
+			targetProxy = 6E12293624DB73AC009D0AD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B31AA1D524734EAB007708F4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -374,6 +452,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6E12293824DB73AC009D0AD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WaterLoggingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleRyan.WaterLoggingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterLogging.app/WaterLogging";
+			};
+			name = Debug;
+		};
+		6E12293924DB73AC009D0AD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WaterLoggingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleRyan.WaterLoggingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterLogging.app/WaterLogging";
+			};
+			name = Release;
+		};
 		B31AA1E424734EAC007708F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -527,6 +645,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6E12293A24DB73AC009D0AD5 /* Build configuration list for PBXNativeTarget "WaterLoggingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E12293824DB73AC009D0AD5 /* Debug */,
+				6E12293924DB73AC009D0AD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B31AA1BF24734EAA007708F4 /* Build configuration list for PBXProject "WaterLogging" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

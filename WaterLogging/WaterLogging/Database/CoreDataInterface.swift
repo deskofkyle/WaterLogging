@@ -23,14 +23,10 @@ final class CoreDataInterface: NSPersistentContainer {
     // Citation: https://nshipster.com/nspredicate/
     // Looked up proper syntax for writing predicates
     private let createdTodayPredicate: NSPredicate = {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = .current
         let startDate = calendar.startOfDay(for: Date())
-        let endDate = Date()
-        let startDatePredicate = NSPredicate(format: "createdAt >= %@", startDate as NSDate)
-        let endDatePredicate = NSPredicate(format: "createdAt < %@", endDate as NSDate)
-        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [startDatePredicate,
-                                                                            endDatePredicate])
-        return predicate
+        return NSPredicate(format: "createdAt >= %@", startDate as NSDate)
     }()
     
     override init(name: String, managedObjectModel model: NSManagedObjectModel) {

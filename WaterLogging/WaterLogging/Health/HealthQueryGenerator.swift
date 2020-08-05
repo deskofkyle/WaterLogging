@@ -75,12 +75,8 @@ final class HealthQueryGenerator: HealthQuerying {
         }
         
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        
-        let todaysDatePredicate = HKQuery.predicateForSamples(withStart: Calendar.current.startOfDay(for: Date()),
-                                                              end: Date(),
-                                                              options: [])
         let query = HKSampleQuery(sampleType: HKObjectType.quantityType(forIdentifier: .bodyMass)!,
-                                  predicate: todaysDatePredicate,
+                                  predicate: nil,
                                   limit: 1,
                                   sortDescriptors: [sortDescriptor]) { (query, results, error) in
                                     

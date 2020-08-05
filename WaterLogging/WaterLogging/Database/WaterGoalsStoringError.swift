@@ -17,7 +17,7 @@ extension WaterGoalsStoringError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidGoal:
-            return NSLocalizedString("The goal value must be greater than zero and less than 5000 mL.",
+            return NSLocalizedString("The goal value must be greater than zero and less than or equal to 6000 mL.",
                                      comment: "")
         }
     }

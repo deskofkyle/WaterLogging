@@ -11,7 +11,7 @@ import Foundation
 extension WaterLogRecord {
     private enum Constants {
         /// Represents the maxium water amount (mL) you can log at a single time for a day
-        static let maxWaterAmount: Double = 5000
+        static let maxWaterAmount: Double = 6000
     }
     
     /**
