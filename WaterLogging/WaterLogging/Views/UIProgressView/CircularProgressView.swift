@@ -178,5 +178,6 @@ final class CircularProgressView: UIView {
         self.viewModel = viewModel
         primaryStat.text = "\(viewModel.currentValue)"
         secondaryStat.text = "\(viewModel.maxValue)"
+        setNeedsDisplay()
     }
 }

@@ -44,4 +44,8 @@ struct WaterGoalsStorage: WaterGoalsStoring {
                           forKey: Constants.goalsStorageKey)
         return .success(())
     }
+    
+    func resetGoalToDefault() {
+        _ = save(goal: Constants.defaultGoal)
+    }
 }

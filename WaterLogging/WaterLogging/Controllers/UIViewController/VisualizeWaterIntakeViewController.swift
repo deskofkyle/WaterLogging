@@ -107,10 +107,10 @@ final class VisualizeWaterIntakeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubview(mainStackView)
-        setupStack()
+        reloadStack()
     }
     
-    private func setupStack() {
+    private func reloadStack() {
         mainStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
         mainStackView.insertArrangedSubview(circularProgressView,
@@ -163,6 +163,7 @@ final class VisualizeWaterIntakeViewController: UIViewController {
         case .success:
             // Refresh progress to display updated goal
             self.refreshProgress()
+            self.reloadStack()
         case .failure(let error):
             displayError(error: error)
         }

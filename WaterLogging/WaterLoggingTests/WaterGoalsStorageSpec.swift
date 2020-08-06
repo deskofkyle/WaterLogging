@@ -19,6 +19,7 @@ class WaterGoalsStorageSpec: QuickSpec {
         describe("the WaterGoalsStorage") {
             beforeEach {
                 waterGoalsStorage = WaterGoalsStorage(defaults: UserDefaults.standard)
+                waterGoalsStorage.resetGoalToDefault()
             }
             
             context("when no goals are saved") {
