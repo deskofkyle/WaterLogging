@@ -25,20 +25,25 @@ In reference to the interview prompt, these are the choices I made regarding the
 - Calculate water intake goals based on the user's weight (read from HealthKit). This goal and progress should update when the user's weight updates.
 
 **Entering Water Consumption**
+
 When you open the app, you can use the first tab to log an amount of water in milliliters (mL). The maximum amount of water you can intake at any one time must be less than or equal to 6000mL. The amount logged must also be greater than 0 mL. 
 
 **Setting a Water Consumption Goal**
+
 In the second section, you can enter a daily goal for water consumption. If you have no goal set, your default goal will be 2500 mL. If you have authorized Health, and if your Health record contains a weight, an automatic goal will be calculated. Auto-generated goals will override any manual goals.
 
 **Authorizing Health (Enhancement Choice)**
+
 For users who want to auto-generate water consumption goals, the app can read a user’s weight from Health. If users have multiple weights logged to Health, this app will use the most recent weight reading. If no weight data is available from Health, it will depend on the user’s manual goal. If the user does not have a manual goal, it will use the default goal of 6000mL.
 
 **Understanding the Visualization**
+
 When water consumption is logged, the Visualize tab will update with the progress for the day. The large ring will display a percentage of progress given your progress over today’s goal. The first label will display the progress towards your goal. The second label will display your goal for today.
 
 # Solution:
 
 **Entering Water Consumption**
+
 Water consumption is stored using a single Core Data instance (`WaterLoggingDataModel.xcdatamodel`) with a single NSManagedObject entity called `WaterLogRecord`. The interface for `WaterLogRecord` is auto-generated using Xcode’s codegen. 
 
 For working with Core Data, `CoreDataInterface` was created. This object has two methods `todaysWaterIntake` which is a computed variable to fetch the today’s water consumption records. The `save` function will take an amount (mL) and create a new row in the Core Data database. 
@@ -50,6 +55,7 @@ When entering water consumption, the `TrackWaterViewController` has a dependency
 I chose to store today’s water consumption in Core Data because it is built-in, fast, and allows for extensibility. If we want to store months or years of water consumption records, Core Data would be the most efficient for many records. 
 
 **Setting a Water Consumption Goal**
+
 For water consumption goals, I did not need a complex database. In this case, I used a User Defaults store called `WaterGoalsStorage` which is a wrapper interface over User Defaults. I made a trade-off to only store the current goal. We will have no knowledge or past goals or how goals will change over time. 
 
 Upon entering a new water goal in the text field, the value will be stored to a User Defaults representation. For auto-generated goals, I also use `WaterGoalsStorage` to make sure the goal persists across sessions.
@@ -57,6 +63,7 @@ Upon entering a new water goal in the text field, the value will be stored to a 
 I chose User Defaults for this use-case because it is lightweight, provides a persistence, and has low overhead costs. 
 
 **Health Querying (Enhancement Choice)**
+
 For water consumption goals, we can calculate a auto-generated goal using a user’s last weight record in Health. On the first tab, you can authorize Health to read a user’s weight. If they agree to read weight, I store a defaults value to remember if we have already shown the prompt. This prevent us from making a subsequent request to authorize from Health. After the first prompt for permission, users have to go to their device’s Health Settings > Health. In this case, I can show an error alert if they try to authorize Health twice and direct them to Settings > Health. 
 
 As discussed in the limitations section, users can disable our app from accessing weight without our knowledge. If this occurs, we could detect it when we make a new query. Since weight would not accessible if they turn off the permission, we can show an alert to suggest altering Settings > Health. 
@@ -66,6 +73,7 @@ I chose to only query a single record instead of the entire history of a user’
 If I continued working on the app, I would have better onboarding for Health permissions. I would also display a visual representation to the user if they have already accepted Health permission. 
 
 **Goal Generation**
+
 After some research, I concluded that there’s no accurate way to calculate water consumption using only weight. I opted for a rule-of-thumb calculation based on an article referenced below. This rule-of-thumb calculation has us divide the user’s weight (lbs) in half to determine a water consumption goal in ounces. I then need to convert this calculation to milliliters (mL) to store it in the `WaterGoalsStorage`.
 
 To calculate water goals, I created `WaterGoalGenerator` which has a dependency of `HealthQueryGenerator`. I wanted to create an abstraction of top of the health query generator to ensure my UI code did not have to directly interface with HealthKit. When `generateWaterGoal` is called, it will asynchronous make a call to HealthKit for the user’s last weight. With this weight, it will call the `waterGoal` function which uses the rule-of-thumb logic discussed above. 
@@ -84,16 +92,16 @@ The visualization contains two text labels for today’s progress and the goal f
 
 # Testing:
 
-Clone the following repository. https://github.com/deskofkyle/WaterLogging
-Navigate to the directory that you cloned to. Run `open WaterLogging/WaterLogging.xcodeproj` with Xcode installed. You can also just run the Xcode project. 
-Choose “WaterLogging” in the schemes and choose a device to run it on.
-Run through the Validation of Behavior steps below
+1. Clone the following repository. https://github.com/deskofkyle/WaterLogging
+2. Navigate to the directory that you cloned to. Run `open WaterLogging/WaterLogging.xcworkspace` with Xcode installed. You can also just run the Xcode project. 
+3. Choose “WaterLogging” in the schemes and choose a device to run it on.
+4. Run through the Validation of Behavior steps below
 
 # How to Run Unit Tests:
-Clone the following repository. https://github.com/deskofkyle/WaterLogging
-Navigate to the directory that you cloned to. Run `open WaterLogging/WaterLogging.xcodeproj` with Xcode installed. You can also just run the Xcode project. 
-Choose “WaterLogging” in the schemes and choose a device to run it on.
-Press “CMD+U” on your keyboard to run the test target. You can also use “Product > Test” in the Xcode navigation bar. 
+1. Clone the following repository. https://github.com/deskofkyle/WaterLogging
+2. Navigate to the directory that you cloned to. Run `open WaterLogging/WaterLogging.xcworkspace` with Xcode installed. You can also just run the Xcode project. 
+3. Choose “WaterLogging” in the schemes and choose a device to run it on.
+4. Press “CMD+U” on your keyboard to run the test target. You can also use “Product > Test” in the Xcode navigation bar. 
 
 # Validation of Behavior:
 **Track today's water intake**
